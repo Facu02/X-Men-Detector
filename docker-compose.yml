@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis_local
+    ports:
+      - "6379:6379" 
+    environment:
+      - REDIS_PASSWORD=
+    networks:
+      - app_network
+    volumes:
+      - redis_data:/data
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  redis_data:
+    driver: local

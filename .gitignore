@@ -1,0 +1,4 @@
+.vscode
+.env
+coverage.out
+__debug*
